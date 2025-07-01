@@ -1,0 +1,26 @@
+{
+  "title": "面白い(主観)と思ったCIまとめ【適宜更新】",
+  "closed": false,
+  "archived": false,
+  "created_at": "2024-07-21",
+  "comments": [
+    {
+      "author": "ryo246912",
+      "created_at": "2024-07-21",
+      "body_markdown": "# リポジトリStar時に当該Issueにコメント作成 ([aquaproj/aqua](https://github.com/aquaproj/aqua))\n\nリポジトリStar時に当該Issueにコメント作成するCI\nIssueの通知をOnにすることで、Star通知を監視できる\nこの辺今もGitHubの設定でStar時の通知はない感じかな・・・？\n\nhttps://github.com/aquaproj/aqua/blob/a020e1cf43c2a786f6c8af5d7981f6a0d86790c0/.github/workflows/watch-star.yaml\nhttps://github.com/suzuki-shunsuke/watch-star-action",
+      "body_updated_at": "2024-07-23"
+    },
+    {
+      "author": "ryo246912",
+      "created_at": "2024-07-21",
+      "body_markdown": "# PR作成時にテンプレート内にデフォルトメッセージが残っていた場合はPRを自動close ([expressjs/express#5480](https://github.com/expressjs/express/pull/5480))\n\nPRテンプレートに「\nExplain the rationale behind the changes and remove this line.」の一文が書かれており、その1文を消していない場合に、自動でPRがcloseされるCI\nExpressが一時スパム的なPR作成に悩まされ、その対応策として挙がったPR\nスパム的PRの内容が、初めてのPR作成及びContribute的なもので初学者のものと思われるパターンが多かったのもあって、いい塩梅として上記のような仕組みが挙がったと思われる。\n\n最終的には、[スパムPRをcloseすること自体はメンテナの大きな負荷にはなっていないこともあって、マージされずclose](https://github.com/expressjs/express/issues/5449#issuecomment-2020666952)\n\nhttps://github.com/aminya/express/blob/f01a72cb6355f9431ad5f94d2772692d1c357475/.github/workflows/spam.yml",
+      "body_updated_at": "2024-07-21"
+    },
+    {
+      "author": "ryo246912",
+      "created_at": "2024-07-21",
+      "body_markdown": "# Issue内容をOpenAIで評価・内容が重複していた場合は自動close ([takahiroanno2024/election2024](https://github.com/takahiroanno2024/election2024))\n\n\nIssue内容をOpenAIに評価させて、内容が重複していると評価された場合は自動closeさせるCI\n2024年の東京都知事選で、政策マニフェストをGitHubを用いてオープンソースの形で提案・募る形の施策を行って、話題になった。\n重複評価以外にセンシティブ判定etc..などLLMに評価させて、自動化を行っている。\n\nちなみに、当初はOpenAIに評価させる[Pythonスクリプトをactionsのyamlファイル内にべた書きする書き方](https://github.com/takahiroanno2024/election2024/pull/113)が一部エンジニアから話題を呼んだ(自分もツッコんじゃうけど、重箱の隅をつつく内容ではある)\n\nhttps://github.com/takahiroanno2024/election2024/blob/main/.github/workflows/issue-review.yml",
+      "body_updated_at": "2024-07-21"
+    }
+  ]
+}

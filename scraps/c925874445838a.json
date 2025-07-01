@@ -1,0 +1,30 @@
+{
+  "title": "Onenoteの移行先としてObsidian(PC&スマホでの運用)を試してみる",
+  "closed": false,
+  "archived": false,
+  "created_at": "2025-05-06",
+  "comments": [
+    {
+      "author": "ryo246912",
+      "created_at": "2025-05-06",
+      "body_markdown": "# 概要\n昨今のAI・MCPの流れもあり、そろそろ誰も使っていないOnenoteの移行先として、\n- Onenoteの内容をmdファイルに出力(≠Markdownの書式によしなに自動で整形)\n- 移行先としてObsidianを試してみる\n\n移行先の最低限の要件として、\n- PCとスマホの別端末での閲覧・書き込みは必須(最悪スマホは閲覧のみでも可)\n- できれば運用コストは抑えたい\n\n以下順不同で書いていく\n\n# 環境\nPC：Windows 11\nスマホ：Android",
+      "body_updated_at": "2025-05-10"
+    },
+    {
+      "author": "ryo246912",
+      "created_at": "2025-05-06",
+      "body_markdown": "# obsidian\n\n## まとめ\n- Google Driveに保存しつつ、ローカルPC・スマホ(Android)に対して定期的に同期する形を採用\n    - PC、BunBackupで定期的にローカルPCにも保存\n    - スマホ、FolderSyncで定期的に同期\n\n## Self-hosted LiveSync\nhttps://penchi.jp/archives/15829.html \nを参考に実施\n\n- もともとfly.ioは以前使用実績があったので、アカウント新規作成は不要\n- 用意してあるスクリプトでインスタンスを作るのは特に苦戦しなかった\n    https://github.com/vrtmrz/obsidian-livesync/blob/main/setup-flyio-on-the-fly-v2.ipynb\n\n#### 苦労した点・感想\n- LiveSyncだと処理が重くなりがち\n- 既存のメモを全部出力して突っ込んだ関係で、ファイル容量全体としては1GB程度なのに、CouchDBすぐに所定の2GBでいっぱいになってSyncできなくなる\n - 一度作成したら、データを作成してもDB上では残り続ける\n      https://github.com/vrtmrz/obsidian-livesync/blob/main/docs/troubleshooting.md#if-a-file-were-deleted-or-trimmed-the-capacity-of-the-database-should-be-reduced-right\n  - [管理画面で一度データを消して](https://github.com/vrtmrz/obsidian-livesync/issues/312#issuecomment-1802320868)、再同期したりしてもすぐにいっぱいになってしまった\n\n後述するobsidian-gitの選択肢を考えたときに、わざわざfly.ioとかでインスタンス立てるのは少し求める内容に対して、オーバー感な印象\n\n## obsidian-git\n- マークダウンファイルを同期すればいいだけなら、GitHub上で良くない？\n- せっかくなら差分管理をしたい\n\nという思いもあり検討\nhttps://github.com/Vinzent03/obsidian-git\n\nhttps://zenn.dev/ishikawa096/articles/158246fc5a5d62 \nを参考\n\n#### 苦労した点・感想\n- PC版は素直に設定できた。\n- スマホだと初回のcloneがうまくいかなかった\n    - ファイル数が多いとうまくいかない？\n    https://github.com/Vinzent03/obsidian-git/issues/694\n    - 初回のファイルコピーは、USBでコピーした\n- pullによる同期はできたけど、同期に時間がかかるetc...で少し動作が不安定・スマホからのpush(というよりスマホでのgit操作)が不安定だった\n    - おま環の可能性は大いにあり\n    - gitの設定がPCではsshの形式だったので、コピーした際にスマホではhttpの形式に変える必要\n    - スマホはあくまでExperimentalなのもあるので、致し方ない印象\n    https://github.com/Vinzent03/obsidian-git?tab=readme-ov-file#-mobile-support-%EF%B8%8F--experimental\n\n差分管理としては採用だが、PC・スマホとの同期としては少し安定しなかったので別の案を検討\n\n## クラウドストレージ + 定期的なファイル同期\n単にmarkdownファイルを同期するだけなら、もっと単純でいいかもと思い検討\nhttps://pouhon.net/obsidian-sync/6796/\n\n### 感想\n自分はWindows + Androidユーザのため、Google Drive＋定期的なローカルへの同期が一番手軽でよさそうという結論になった\n- PCはGoogle Drive + BunBackup\n    - BunBackupを選んだのはすでに他の用途で使っているから\n- スマホはGoogle Drive + FolderSync\n",
+      "body_updated_at": "2025-05-10"
+    },
+    {
+      "author": "ryo246912",
+      "created_at": "2025-05-06",
+      "body_markdown": "# Onenote\n\nOnenoteをmdファイルに出力方法として、以下を参考\nhttps://github.com/leojonathanoh/ConvertOneNote2MarkDown"
+    },
+    {
+      "author": "ryo246912",
+      "created_at": "2025-06-19",
+      "body_markdown": "> ## クラウドストレージ + 定期的なファイル同期\n> - スマホはGoogle Drive + FolderSync\n\nFolderSyncを今まで使用していたが、以下の点がイマイチに感じてきた\n- 「双方向同期 + 削除を適用」を設定しているが、片側で削除・リネームした内容がもう一方に適用されない\n- 同期スピードが少し遅め(1万程度のファイルで10分ぐらいの同期時間がかかる)\n\nそのため、同じような同期アプリであるDriveSyncを試してみたが、上記解決できそうでこちらを試してみる"
+    }
+  ]
+}
