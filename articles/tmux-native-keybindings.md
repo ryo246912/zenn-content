@@ -130,20 +130,20 @@ mods = "Command"
 
 
 ```toml
-[[keyboard.bindings]]
 # Cmd+W: ウィンドウを閉じる (Ctrl+B → &)
+[[keyboard.bindings]]
 chars = "\u0002&"
 key = "W"
 mods = "Command"
 
-[[keyboard.bindings]]
 # Cmd+D: 垂直ペイン分割 (Ctrl+B → %)
+[[keyboard.bindings]]
 chars = "\u0002%"
 key = "D"
 mods = "Command"
 
-[[keyboard.bindings]]
 # Cmd+Shift+D: 水平ペイン分割 (Ctrl+B → ")
+[[keyboard.bindings]]
 chars = "\u0002\""
 key = "D"
 mods = "Command|Shift"
@@ -203,12 +203,14 @@ tmuxのペイン内の検索するには、`Ctrl+B` → `[`を押したときに
 | `Cmd+W` | `Ctrl+B` → `&` | ウィンドウを閉じる |
 | `Cmd+D` | `Ctrl+B` → `%` | 垂直ペイン分割 |
 | `Cmd+Shift+D` | `Ctrl+B` → `"` | 水平ペイン分割 |
-| `Cmd+1〜3` | `Ctrl+B` → `1〜9` | ウィンドウ切り替え |
+| `Cmd+1〜3` | `Ctrl+B` → `1〜3` | ウィンドウ切り替え |
 | `Cmd+[` | `Ctrl+B` → `p` | 前のウィンドウ |
 | `Cmd+]` | `Ctrl+B` → `n` | 次のウィンドウ |
 | `Cmd+F` | `Ctrl+B` → `Ctrl+F`(※カスタム) | 検索 |
 
 この設定により、普段慣れ親しんだキーバインドでtmuxを操作できるようになります。
+
+上記は代表例ですが、慣れると他のコマンドにも色々設定すると良いと思います。
 
 # 注意点
 
