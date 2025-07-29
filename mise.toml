@@ -1,17 +1,10 @@
 [tools]
 "npm:@taplo/cli" = "0.7.0"
-"npm:prettier"   = "latest"
-"npm:zenn-cli"   = "latest"
-pnpm             = "latest"
+"npm:prettier"   = "3.6.2"
+"npm:zenn-cli"   = "0.2.1"
+pnpm             = "10.13.1"
 
 [tasks.preview]
 description = "zenn preview"
 run         = "zenn preview --port 8008"
 
-[tasks.lint-toml]
-description = "Run lint TOML files"
-run         = "taplo format --check"
-
-[tasks.fix-toml]
-description = "Run fix TOML files"
-run         = "taplo format"
