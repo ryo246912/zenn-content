@@ -2,7 +2,7 @@
 "npm:@taplo/cli" = "0.7.0"
 "npm:prettier"   = "3.6.2"
 "npm:zenn-cli"   = "0.2.3"
-pnpm             = "10.18.1"
+pnpm             = "10.18.2"
 
 [tasks.preview]
 description = "zenn preview"
