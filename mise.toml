@@ -1,7 +1,7 @@
 [tools]
 "npm:@taplo/cli" = "0.7.0"
 "npm:prettier"   = "3.6.2"
-"npm:zenn-cli"   = "0.2.5"
+"npm:zenn-cli"   = "0.2.6"
 pnpm             = "10.18.3"
 
 [tasks.preview]
