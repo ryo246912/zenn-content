@@ -3,7 +3,6 @@
   "extends": ["github>ryo246912/renovate-config"],
   "prHourlyLimit": 2,
   "prConcurrentLimit": 0,
-  "reviewers": ["ryo246912"],
   "minimumReleaseAge": "3 days",
   "packageRules": [
     {
